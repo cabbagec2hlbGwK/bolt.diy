@@ -255,7 +255,7 @@ export const ChatImpl = memo(
         return;
       }
       // Ensure first message is from user
-      if (messages.length === 0 || messages[0].role !== 'user') {
+      if (messages.length === 0 && messages[0].role !== 'user') {
         const userMessage = {
           id: `\${new Date().getTime()}`,
           role: 'user',
