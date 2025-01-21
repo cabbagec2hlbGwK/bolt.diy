@@ -254,6 +254,25 @@ export const ChatImpl = memo(
       if (_input.length === 0 || isLoading) {
         return;
       }
+      // Ensure first message is from user
+      if (messages.length === 0 || messages[0].role !== 'user') {
+        const userMessage = {
+          id: `\${new Date().getTime()}`,
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: `[Model: \${model}]\n\n[Provider: \${provider.name}]\n\nUse the templete`,
+            },
+            ...imageDataList.map((imageData) => ({
+              type: 'image',
+              image: imageData,
+            })),
+          ],
+        };
+
+        setMessages([userMessage, ...messages]);
+      }
 
       /**
        * @note (delm) Usually saving files shouldn't take long but it may take longer if there

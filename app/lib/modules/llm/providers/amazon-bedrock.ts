@@ -21,31 +21,31 @@ export default class AmazonBedrockProvider extends BaseProvider {
 
   staticModels: ModelInfo[] = [
     {
-      name: 'anthropic.claude-3-5-sonnet-20240620-v1:0',
+      name: 'us.anthropic.claude-3-5-sonnet-20240620-v1:0',
       label: 'Claude 3.5 Sonnet (Bedrock)',
       provider: 'AmazonBedrock',
       maxTokenAllowed: 4096,
     },
     {
-      name: 'anthropic.claude-3-sonnet-20240229-v1:0',
-      label: 'Claude 3 Sonnet (Bedrock)',
+      name: 'us.anthropic.claude-3-5-sonnet-20241022-v2:0',
+      label: 'Claude v2 3.5 Sonnet (Bedrock)',
       provider: 'AmazonBedrock',
-      maxTokenAllowed: 4096,
+      maxTokenAllowed: 8000,
     },
     {
-      name: 'anthropic.claude-3-haiku-20240307-v1:0',
+      name: 'us.anthropic.claude-3-5-haiku-20241022-v1:0',
       label: 'Claude 3 Haiku (Bedrock)',
       provider: 'AmazonBedrock',
       maxTokenAllowed: 4096,
     },
     {
-      name: 'amazon.nova-pro-v1:0',
+      name: 'us.amazon.nova-pro-v1:0',
       label: 'Amazon Nova Pro (Bedrock)',
       provider: 'AmazonBedrock',
       maxTokenAllowed: 5120,
     },
     {
-      name: 'amazon.nova-lite-v1:0',
+      name: 'us.amazon.nova-lite-v1:0',
       label: 'Amazon Nova Lite (Bedrock)',
       provider: 'AmazonBedrock',
       maxTokenAllowed: 5120,
